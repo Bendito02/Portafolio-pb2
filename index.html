@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Portafolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      scroll-behavior: smooth;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left:  0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+      opacity: 0.05;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    header {
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .multitype-title span {
+      font-size: 4rem;
+      display: inline-block;
+      transition: transform 0.3s;
+    }
+    .multitype-title span:hover {
+      transform: scale(1.2) rotate(3deg);
+    }
+    .multitype-title span:nth-child(1) { font-family: 'Arial'; }
+    .multitype-title span:nth-child(2) { font-family: 'Georgia'; }
+    .multitype-title span:nth-child(3) { font-family: 'Courier New'; }
+    .multitype-title span:nth-child(4) { font-family: 'Verdana'; }
+    .multitype-title span:nth-child(5) { font-family: 'Impact'; }
+    .multitype-title span:nth-child(6) { font-family: 'Times New Roman'; }
+    .multitype-title span:nth-child(7) { font-family: 'Tahoma'; }
+    .multitype-title span:nth-child(8) { font-family: 'Lucida Console'; }
+    .multitype-title span:nth-child(9) { font-family: 'Helvetica'; }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background: #222;
+      padding: 10px;
+      animation: fadeIn 2s ease-out;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background: white;
+      transition: width 0.3s;
+    }
+    nav a:hover {
+      color: #ccc;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    section {
+      padding: 60px 20px;
+      animation: fadeInUp 1s ease-out;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .project {
+      background: #f0f0f0;
+      padding: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .project img {
+      width: 100%;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .project:hover img {
+      transform: scale(1.05);
+    }
+    .project p {
+      padding: 15px;
+    }
+
+    .video-container video {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+    }
+    .about-content img {
+      width: 250px;
+      border-radius: 10px;
+    }
+    .about-text {
+      max-width: 600px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea {
+      padding: 10px;
+      font-size: 1rem;
+    }
+    button {
+      background: black;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #333;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="multitype-title">
+      <span>P</span><span>O</span><span>R</span><span>T</span><span>A</span><span>F</span><span>O</span><span>L</span><span>I</span><span>O</span>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#proyectos">Mis proyectos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="sobre-mi">
+    <h2 class="section-title">Sobre mí</h2>
+    <div class="about-content">
+      <img src="tu-foto.jpg" alt="Foto de perfil">
+      <div class="about-text">
+        <p>Soy un creador digital apasionado por el motion graphics, el diseño visual para la música, la publicidad futurista y las experiencias interactivas. Utilizo herramientas como Blender, After Effects, Photoshop e Inteligencia Artificial para llevar ideas a otro nivel visual.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyectos">
+    <h2 class="section-title">Mis proyectos</h2>
+    <ul>
+      <li><a href="#galeria-motion">Motion Graphics</a></li>
+      <li><a href="#galeria-ia">IA Generativa para Publicidad</a></li>
+      <li><a href="#galeria-cgi">CGI para Productos</a></li>
+      <li><a href="#galeria-modelado">Modelado 3D</a></li>
+      <li><a href="#galeria-canciones">Diseño para Canciones</a></li>
+    </ul>
+  </section>
+
+  <!-- Galerías de proyectos -->
+  <section id="galeria-motion">
+    <h2 class="section-title">Galería: Motion Graphics</h2>
+    <div class="project-grid">
+      <a href="#" class="project">
+        <img src="motion1.jpg" alt="Motion Cover">
+        <p>Video de apertura para marca de tecnología.</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="galeria-ia">
+    <h2 class="section-title">Galería: IA Generativa</h2>
+    <div class="project-grid">
+      <a href="#" class="project">
+        <img src="ia1.jpg" alt="IA Cover">
+        <p>Publicidad visual generada con IA para redes sociales.</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="galeria-cgi">
+    <h2 class="section-title">Galería: CGI para Productos</h2>
+    <div class="project-grid">
+      <a href="#" class="project">
+        <img src="cgi1.jpg" alt="CGI Cover">
+        <p>Render hiperrealista para empaque de bebida.</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="galeria-modelado">
+    <h2 class="section-title">Galería: Modelado 3D</h2>
+    <div class="project-grid">
+      <a href="#" class="project">
+        <img src="modelado1.jpg" alt="Modelado Cover">
+        <p>Modelo 3D de personaje para animación.</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="galeria-canciones">
+    <h2 class="section-title">Galería: Diseño para Canciones</h2>
+    <div class="project-grid">
+      <a href="#" class="project">
+        <img src="cancion1.jpg" alt="Diseño canción Cover">
+        <p>Arte de portada para single urbano en Spotify.</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2 class="section-title">Contacto</h2>
+    <form>
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="email" placeholder="Tu correo" required>
+      <textarea rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+</body>
+</html>
